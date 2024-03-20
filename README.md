@@ -1,9 +1,25 @@
 # plansys2_suave
 PDDL files for plansys2
 
-Step 1:
+## Install
 
-Download the plansys2 package
+Get repo and dependencies:
+```bash
+mkdir -p ~/suave_metaplan_ws/src
+cd ~/suave_metaplan_ws/src
+git clone git@github.com:kas-lab/suave_metaplan.git
+cd ~/suave_metaplan_ws/
+vcs import src < suave_metaplan/dependencies.rosinstall --recursive
+source /opt/ros/humble/setup.bash
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+Build:
+```bash
+cd ~/suave_metaplan_ws/
+source /opt/ros/humble/setup.bash
+colcon build --symlink-install
+```
 
 ## Running the code
 
